@@ -19,6 +19,37 @@ body {
   padding: 0;
   margin: 0;
 }
+h1 {
+  font-size: 48px; /* Adjust the font size to your preference */
+  font-family: 'Comic Sans MS', cursive; /* Use a fun font */
+  text-align: center;
+  color: #FF007F; /* Set a vibrant text color (in this case, pink) */
+  text-transform: uppercase; /* Convert text to uppercase */
+  letter-spacing: 3px; /* Add letter spacing for a playful look */
+  animation: rainbowText 4s infinite linear; /* Apply a rainbow color animation */
+}
+
+@keyframes rainbowText {
+  0% { color: #FF007F; } /* Pink */
+  14% { color: #FF00FF; } /* Magenta */
+  28% { color: #8000FF; } /* Purple */
+  42% { color: #0000FF; } /* Blue */
+  57% { color: #00FFFF; } /* Cyan */
+  71% { color: #00FF00; } /* Green */
+  85% { color: #FFFF00; } /* Yellow */
+  100% { color: #FF007F; } /* Pink */
+}
+
+/* Optional: Add some text shadow for emphasis */
+h1::after {
+  content: " 🎉"; /* Add a party hat emoji for extra fun */
+  font-size: 36px; /* Adjust the font size */
+  vertical-align: middle;
+  color: #FFD700; /* Set a gold color for the emoji */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle text shadow */
+}
+
+
 
 .confetti {
   width: 1rem;
@@ -190,6 +221,7 @@ body {
             height: 100vh;
             display: flex;
             justify-content: center;
+            flex-direction: column;
             align-items: center;
         }
 
@@ -238,6 +270,7 @@ body {
     </style>
 </head>
 <body>
+    <h1>Happy Birthday</h1>
 <!-- Animation -->
 <div class="confetti-land">
     <div class="confetti"></div>
@@ -404,9 +437,46 @@ function onChange(e) {
   document.body.setAttribute('data-type', e.currentTarget.value);
   confettiPlayers.forEach(player => player.playbackRate = e.currentTarget.value === 'bookmarks' ? 2 : 1);
 }
+
+//audio
+window.addEventListener("DOMContentLoaded", event => {
+  const audio = document.querySelector("audio");
+  audio.volume = 0.2;
+
+  // Play the audio when the DOM is loaded
+  audio.play();
+
+  // Add an "ended" event listener to loop the audio
+  audio.addEventListener("ended", () => {
+    audio.currentTime = 0; // Reset the audio to the beginning
+    audio.play(); // Play the audio again
+  });
+});
+
+//music stop
+
+if (enteredUsername === username && enteredPassword === password) {
+            // Stop the music when the user logs in
+            stopMusic();
+
+            // Redirect to Birthday.html on successful login
+            window.location.href = "birthday.html";
+        } else {
+            document.getElementById("errorMessage").textContent = "Invalid username or password.";
+        }
+
+    // Function to stop the music
+    function stopMusic() {
+        const audio = document.querySelector("audio");
+        if (audio) {
+            audio.pause();
+        }
+    }
+
+
     </script>
 
-
+<audio src="music1.mp3"></audio>
 </body>
 </html>
 
