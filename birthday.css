@@ -240,11 +240,12 @@ canvas {
 }
 
 
+
 /* Flip Card */
 .birthdayCard {
   position: relative;
   margin-left: 200px;
-  width: 1000px;
+  width: 200px;
   margin-top: 30px;
   height:350px;
   cursor: pointer;

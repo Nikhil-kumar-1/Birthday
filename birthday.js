@@ -186,6 +186,24 @@ document.ontouchstart = evt => birthday.onClick(evt)
     });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+  const audio = document.getElementById("music");
+
+  // Function to restart audio when it ends
+  function restartAudio() {
+      audio.currentTime = 0;
+      audio.play();
+  }
+
+  // Pause and play the audio when the page is refreshed
+  audio.pause();
+  audio.currentTime = 0;
+  audio.addEventListener("ended", restartAudio);
+  audio.play();
+});
+
+
+
 
 
 
