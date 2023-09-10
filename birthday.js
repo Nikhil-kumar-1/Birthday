@@ -186,21 +186,20 @@ document.ontouchstart = evt => birthday.onClick(evt)
     });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-  const audio = document.getElementById("music");
+window.addEventListener("DOMContentLoaded", event => {
+  const audio = document.querySelector("audio");
+  audio.volume = 0.2;
 
-  // Function to restart audio when it ends
-  function restartAudio() {
-      audio.currentTime = 0;
-      audio.play();
-  }
-
-  // Pause and play the audio when the page is refreshed
-  audio.pause();
-  audio.currentTime = 0;
-  audio.addEventListener("ended", restartAudio);
+  // Play the audio when the DOM is loaded
   audio.play();
+
+  // Add an "ended" event listener to loop the audio
+  audio.addEventListener("ended", () => {
+    audio.currentTime = 0; // Reset the audio to the beginning
+    audio.play(); // Play the audio again
+  });
 });
+
 
 
 
