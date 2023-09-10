@@ -8,11 +8,12 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
             background-color: #f2f2f2;
-           
+            width: 100%;
+            height: 100vh;
         }
 
         .container {
-            max-width: 400px;
+            width: 500px;
             margin: 0 auto;
             padding: 20px;
             background-color: #fff;
@@ -27,6 +28,7 @@
         label {
             display: block;
             font-weight: bold;
+            padding: 10px;
         }
 
         input[type="text"], input[type="password"] {
@@ -53,6 +55,57 @@
         button:hover {
             background-color: #0056b3;
         }
+
+        /* Styling for the quiz section */
+        .quiz-container {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
+        }
+
+        .quiz-container h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .answer-input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .quiz-result {
+            font-weight: bold;
+        }
+
+        /* Styling for the score section */
+        .score-container {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
+        }
+
+        .score-container h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        #score {
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -61,39 +114,140 @@
         <form id="loginForm">
             <div class="form-group">
                 <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="username" name="username" required placeholder="Nikhil Birthday Date">
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" required placeholder="your Birthday Date">
             </div>
             <div class="error-message" id="errorMessage"></div>
             <button type="button" id="loginButton">Login</button>
         </form>
     </div>
 
-    <script>
-        const username = "ayunik";
-        const password = "ayunik";
-        const sentences = [
-            "Username:Your favourite colour ",
-            "Password: Your favourite food",
+    <!-- Quiz Section -->
+    <div class="quiz-container">
+        <h2>Guess the Answers</h2>
+        <div class="question">
+            Question 1: What is your favorite color?
+        </div>
+        <input type="text" class="answer-input" id="answer1">
+
+        <div class="question">
+            Question 2: What is your favorite food?
+        </div>
+        <input type="text" class="answer-input" id="answer2">
+
+        <div class="question">
+            Question 3: What is your favorite movie?
+        </div>
+        <input type="text" class="answer-input" id="answer3">
+
+        <div class="question">
+            Question 4: What is your favorite book?
+        </div>
+        <input type="text" class="answer-input" id="answer4">
+
+        <div class="question">
+            Question 5: What is your favorite place to visit?
+        </div>
+        <input type="text" class="answer-input" id="answer5">
+
+        <!-- Add more questions here -->
+        <div class="question">
+            Question 6: Question 6?
+        </div>
+        <input type="text" class="answer-input" id="answer6">
+
+        <div class="question">
+            Question 7: Question 7?
+        </div>
+        <input type="text" class="answer-input" id="answer7">
+
+        <div class="question">
+            Question 8: Question 8?
+        </div>
+        <input type="text" class="answer-input" id="answer8">
+
+        <div class="question">
+            Question 9: Question 9?
+        </div>
+        <input type="text" class="answer-input" id="answer9">
+
+        <div class="question">
+            Question 10: Question 10?
+        </div>
+        <input type="text" class="answer-input" id="answer10">
+
+        <button type="button" id="checkAnswersButton">Check Answers</button>
+        <div class="quiz-result" id="quizResult"></div>
+    </div>
+
+    <!-- Score Section -->
+
+   <!-- Add this JavaScript inside the <script> tag in your HTML -->
+<script>
+    const username = "ayunik";
+    const password = "ayunik";
+    const correctAnswers = [
+        "blue", // Question 1: What is your favorite color?
+        "black", // Question 2: What is your favorite food?
+        "green", // Question 3: What is your favorite movie?
+        "black", // Question 4: What is your favorite book?
+        "green", // Question 5: What is your favorite place to visit?
+        // Add more correct answers here for Question 6, 7, 8, 9, 10
+    ];
+
+    let chancesRemaining = 2; // Number of chances the user has
+
+    document.getElementById("loginButton").addEventListener("click", function () {
+        const enteredUsername = document.getElementById("username").value;
+        const enteredPassword = document.getElementById("password").value;
+
+        if (enteredUsername === username && enteredPassword === password) {
+            document.getElementById("errorMessage").textContent = "";
+            alert("Login successful! Your username and password are correct.");
+            // Redirect to another page
+            window.location.href = "birthday.html";
+        } else if (enteredUsername !== username) {
+            document.getElementById("errorMessage").textContent = "Invalid username. Try guessing the Username.";
+        } else {
+            document.getElementById("errorMessage").textContent = "Invalid Password. Try guessing the Password.";
+        }
+    });
+
+    document.getElementById("checkAnswersButton").addEventListener("click", function () {
+        let score = 0;
+        const answers = [
+            document.getElementById("answer1").value.toLowerCase(),
+            document.getElementById("answer2").value.toLowerCase(),
+            document.getElementById("answer3").value.toLowerCase(),
+            document.getElementById("answer4").value.toLowerCase(),
+            document.getElementById("answer5").value.toLowerCase(),
+            // Add more answers here for Question 6, 7, 8, 9, 10
         ];
 
-        document.getElementById("loginButton").addEventListener("click", function() {
-            const enteredUsername = document.getElementById("username").value;
-            const enteredPassword = document.getElementById("password").value;
-
-            if (enteredUsername === username && enteredPassword === password) {
-                document.getElementById("errorMessage").textContent = "";
-                alert("Login successful! Your username and password are correct.");
-                // Redirect to another page
-                window.location.href = "birthday.html";
-            } else {
-                const randomSentence = sentences[Math.floor(Math.random() * sentences.length)];
-                document.getElementById("errorMessage").textContent = "Invalid username or password. Try guessing this sentence: " + randomSentence;
+        for (let i = 0; i < correctAnswers.length; i++) {
+            if (answers[i] === correctAnswers[i]) {
+                score++;
             }
-        });
-    </script>
+        }
+
+        document.getElementById("quizResult").textContent = "Your score: " + score + "/10";
+        document.getElementById("score").textContent = score;
+
+        if (score < correctAnswers.length && chancesRemaining > 0) {
+            // Display a message about remaining chances
+            document.getElementById("quizResult").textContent +=
+                " | Chances remaining: " + chancesRemaining;
+            chancesRemaining--;
+        }
+    });
+</script>
+
 </body>
 </html>
+
+
+
+
