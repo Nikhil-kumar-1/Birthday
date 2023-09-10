@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
     <style>
-    * {
+     * {
   box-sizing: border-box;
 }
 body {
@@ -233,6 +233,12 @@ body {
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
 
+        @media screen and (max-width: 700px) {
+  .container{
+    width: 300px; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
+
         .form-group {
             margin-bottom: 20px;
         }
@@ -358,7 +364,7 @@ body {
   
   
  <!-- animation end  -->
-  <select id="type">
+  <select style="margin-left: 20px;" id="type">
     <option value="cornfetti">Candy Corn</option>
     <option value="leaves">Fall Leaves</option>
     <option value="bookmarks" selected>Bookmarks</option>
@@ -452,6 +458,8 @@ window.addEventListener("DOMContentLoaded", event => {
     audio.play(); // Play the audio again
   });
 });
+
+
     </script>
 
 <audio src="music1.mp3"></audio>
