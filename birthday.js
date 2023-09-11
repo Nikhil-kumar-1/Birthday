@@ -186,6 +186,16 @@ document.ontouchstart = evt => birthday.onClick(evt)
     });
 });
 
+//Button
+document.addEventListener("DOMContentLoaded", function () {
+  const birthdayButton = document.getElementById("birthdayButton");
+
+  birthdayButton.addEventListener("click", function () {
+    window.location.href = "Birthday1/index.html"; // Redirect to birthday.html
+  });
+});
+//Button end
+
 window.addEventListener("DOMContentLoaded", event => {
   const audio = document.querySelector("audio");
   audio.volume = 0.2;
@@ -199,6 +209,9 @@ window.addEventListener("DOMContentLoaded", event => {
     audio.play(); // Play the audio again
   });
 });
+
+//light
+
 
 
 
