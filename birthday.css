@@ -229,12 +229,13 @@ svg {
 }
 
 /* candle end */
-.canvas-container{
+.canvas-container {
   position: relative;
   width: 100%;
   height: 100vh;
   text-align: center;
 }
+
 canvas {
   display: block;
   width: 100%;
@@ -244,8 +245,9 @@ canvas {
   left: 0;
   z-index: -1;
 }
-.birthday{
-  color:var(--main-color);
+
+.birthday {
+  color: var(--main-color);
   margin-top: 50px;
   font-size: 3em;
   font-weight: 700;
@@ -253,12 +255,15 @@ canvas {
   user-select: none;
   margin-bottom: 20px;
 }
+
 @media only screen and (max-width: 800px) {
-  .birthday{
+  .birthday {
     font-size: 2em;
     text-align: center;
+    margin-top: 20px; /* Adjust the top margin for better alignment */
   }
 }
+
 .birthday h1 {
   font-weight: 900;
   font-family: 'Pacifico', cursive;
