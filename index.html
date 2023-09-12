@@ -371,6 +371,10 @@ body {
     <!--option value="snowflake">Snowflakes</option-->
   </select>
 
+  <button style="background-color:red;" id="playAudioButton">Play Audio</button>
+
+    <audio id="audio" src="music1.mp3"></audio>
+
     <div class="container">
         <h2>Login</h2>
         <form id="loginForm">
@@ -441,24 +445,26 @@ function onChange(e) {
 }
 
 //audio
-window.addEventListener("DOMContentLoaded", event => {
-  const audio = document.querySelector("audio");
-  audio.volume = 0.2;
+const audio = document.getElementById("audio");
+        const playAudioButton = document.getElementById("playAudioButton");
 
-  // Play the audio when the DOM is loaded
-  audio.play();
+        // Set the audio volume and loop
+        audio.volume = 0.2;
+        audio.loop = true;
 
-  // Add an "ended" event listener to loop the audio
-  audio.addEventListener("ended", () => {
-    audio.currentTime = 2; // Reset the audio to the beginning
-    audio.play(); // Play the audio again
-  });
-});
+        // Add a click event listener to the button
+        playAudioButton.addEventListener("click", function() {
+            // Check if the audio is paused, and if so, play it
+            if (audio.paused) {
+                audio.play();
+            } else {
+                // If the audio is already playing, pause it
+                audio.pause();
+            }
+        });
 
 
     </script>
-
-<audio src="music1.mp3"></audio>
 </body>
 </html>
 

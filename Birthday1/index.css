@@ -56,17 +56,6 @@ html,body{
     background:inherit;
     border-radius:100%;
   }
-
-  button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #ff5733;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-top: 20px;
-  }
-  
   @keyframes love {
     0%{top:110%}
   }
@@ -79,3 +68,8 @@ html,body{
   @-ms-keyframes love {
     0%{top:110%}
   }
+
+/* 
+  box */
+
+  
