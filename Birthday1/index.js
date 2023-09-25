@@ -12,9 +12,9 @@ var love = setInterval(function(){
   },500);
   
   var i = 0;
-  var txt1 = "Hi Ayushi First of all Happy Birthday.....!  <<               Now I wan't to say something special to you. <<<                So , Please read everything carefully...!                                                                           > When I saw you for the first time < You seems something Special to me.  <<                  As the days goes < you get closer to me....! <<                           I don't know the reason why your thoughts always resonates inside my mind...!                                                     > Everything about you was always intresting for me...!                     << I am somewhat nervous Because I haven't said these words to anyone and I won't say to anyone in future...!                                                     > I Love my Parents so much than anything else in this world....!                    << Now You are the only person  whom I love equally with my parents....!                                                             >I Love U <Ayushi.....! |                  <<<< On your special day, I want you to know how much I miss you. Your absence is like a void in my life, and I long for the moments when we can be together again. Happy Birthday, Ayushi! I hope this day brings you all the happiness and love you deserve  <<<<<< With love and warm wishes.<<           Nikhil Kumar";
+  var txt1 = "Hi Ayushi First of all Happy Birthday once again🎂🎂.!  <<  Today is a day to celebrate not just the passing of another year but to celebrate the incredible person that you are     Now I wan't to say something special to you. <<<              So , Please read everything carefully...!     > When I saw you for the first time < You seemed truly extraordinary to me .  <<    As the days goes < you make speciaal place in my heart....! <<    I don't know the reason why your thoughts always resonates inside my mind...!  > Everything about you was always intresting for me...!    << I was never thought of my life without you. you become an integral part of my world!    > I Love my Parents so much than anything else in this world....!     << Now You are the only person  whom I love equally with my parents....!     After our breakup, I have never experienced that same type of feeling inside me since I first saw you. no girl after you, would ever find a place in my heart. I truly believed that you were the one person God had created just for me. He said to  me that a girl I would meet in the 12th class would be my future, but I can't understand why God decided to change His plan. Perhaps I wasn't suitable for you, and you truly deserve someone better than me. That's why it seems like God altered His plan.😂😂(??).             >I Love U <Ayushi.....! I really Love You yrr. Love you so much.|       <<<< On your special day, I want you to know how much I miss you. Your absence is like a void in my life, and I long for the moments when we can may be in future together again.I will waiting for that day.......          So,BHUT HO GAI BATE olast Time Once again Happy Birthday, Ayushi!  on this wonderful day, I hope it brings you all the happiness and love you deserve. May this year be filled with exciting adventures, new opportunities, and countless moments of joy. You are destined for greatness, Ayushi, and I'm blessed to be a part of your journey<< Happy Birthday🎂🎂💖 >>>>>>>>>>>>>Nikhil Kumar🎂🎈🎁";
 
-  var speed = 50;
+  var speed = 100;
   typeWriter();
   function typeWriter() {
     if (i < txt1.length) {        
@@ -63,5 +63,33 @@ var love = setInterval(function() {
 
 //box
 
+// index.js
 
-  
+// Function to handle the button click
+function openGalleryPage() {
+  const birthday = prompt("Please enter code name in small letter:");
+
+  // Check if the entered date is correct (7/9/2001)
+  if (birthday === "ayunik") {
+    window.location.href = "gallery.html"; // Redirect to gallery.html
+  } else {
+    alert("Authorization failed. Please enter the correct birthday.");
+  }
+}
+
+// Add an event listener to the button
+document.getElementById("loginButton").addEventListener("click", openGalleryPage);
+
+window.addEventListener("DOMContentLoaded", event => {
+  const audio = document.querySelector("audio");
+  audio.volume = 0.2;
+
+  // Play the audio when the DOM is loaded
+  audio.play();
+
+  // Add an "ended" event listener to loop the audio
+  audio.addEventListener("ended", () => {
+    audio.currentTime = 0; // Reset the audio to the beginning
+    audio.play(); // Play the audio again
+  });
+});

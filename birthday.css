@@ -452,6 +452,7 @@ margin-bottom: 20px;
 }
 .row img{
   width: 100%;
+  height:600px;
   border-radius: 8px;
   display: block;
   transition: transform 0.5s;
@@ -464,7 +465,7 @@ margin-bottom: 20px;
   border-radius: 8px;
   left: 0;
   bottom: 0;
-  overflow: hidden;
+  overflow: scroll;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -476,12 +477,12 @@ margin-bottom: 20px;
 .layer h5{
   font-size: 20px;
   font-weight: 600;
-  margin-bottom: 15px;
+  margin-bottom:90px;
 }
 .layer p{
 color: var(--seconnd-color);
 font-size: 1rem;
-line-height: 1.8;
+line-height: 1.3;
 }
 .layer i{
   color: var(--main-color);

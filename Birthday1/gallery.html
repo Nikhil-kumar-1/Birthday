@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Video/Image Gallery</title>
+    <style>
+        /* Basic styling for the gallery container */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 10px;
+            padding: 10px;
+        }
+
+        /* Style for each gallery item (video or image) */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Style for the embedded video (if applicable) */
+        .gallery-item video {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Style for responsive images */
+        .gallery-item img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Add a hover effect */
+        .gallery-item:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; color:green; font-size: 30px;">Old Memories</h1>
+    <div class="gallery-container">
+        <!-- Gallery items -->
+        <div class="gallery-item">
+            <img src="img1.jpg">
+        </div>
+        <div class="gallery-item">
+            <img src="img2.jpg">
+        </div>
+        <div class="gallery-item">
+            <img src="img3.jpg">
+        </div>
+        <div class="gallery-item">
+            <img src="img4.jpg">
+        </div>
+
+        <div class="gallery-item">
+            <img src="img5.jpg">
+        </div>
+
+        <div class="gallery-item">
+            <img src="img6.jpg">
+        </div>
+
+        <div class="gallery-item">
+            <img src="img7.jpg">
+        </div>
+
+        <div class="gallery-item">
+            <img src="img8.jpg">
+        </div>
+
+        <div class="gallery-item">
+            <img src="img9.jpg">
+        </div>
+
+        <div class="gallery-item">
+            <img src="img10.jpg">
+        </div>
+
+        <div class="gallery-item">
+            <img src="img11.jpg">
+        </div>
+
+        <div class="gallery-item">
+            <img src="img12.jpg">
+        </div>
+        <!-- Add more gallery items as needed -->
+        <div class="gallery-item">
+            <video controls>
+                <source src="video1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="gallery-item">
+            <video controls>
+                <source src="video6.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="gallery-item">
+            <video controls>
+                <source src="video2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="gallery-item">
+            <video controls>
+                <source src="video3.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="gallery-item">
+            <video controls>
+                <source src="video4.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="gallery-item">
+            <video controls>
+                <source src="video5.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener("DOMContentLoaded", event => {
+  const audio = document.querySelector("audio");
+  audio.volume = 0.2;
+
+  // Play the audio when the DOM is loaded
+  audio.play();
+
+  // Add an "ended" event listener to loop the audio
+  audio.addEventListener("ended", () => {
+    audio.currentTime = 0; // Reset the audio to the beginning
+    audio.play(); // Play the audio again
+  });
+});
+        // Optional JavaScript functionality (e.g., lightbox or modal)
+        // You can add JavaScript libraries like Lightbox to enhance the gallery's functionality.
+    </script>
+     <audio src="music.mp3"></audio>
+</body>
+</html>
