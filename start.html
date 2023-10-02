@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="start.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="stage">
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+      </div>
+      
+      <style>
+        * *, *::before, *::after { 
+          animation-play-state: running !important;
+        }
+      </style>
+
+      <!-- button -->
+      <button style="margin: 30px;" id="nextPageButton"> Click to Open Next Page</button>
+
+    <script>
+        // JavaScript function to handle button click
+        document.getElementById('nextPageButton').addEventListener('click', function() {
+            // Redirect to the next page (replace 'next-page.html' with the actual URL of your next page)
+            window.location.href = 'birthday.html';
+        });
+
+    //    audio
+    window.addEventListener("DOMContentLoaded", event => {
+            const audio = document.querySelector("audio");
+            audio.volume = 0.2;
+
+            // Play the audio when the DOM is loaded
+            audio.play();
+
+            // Add an "ended" event listener to loop the audio
+            audio.addEventListener("ended", () => {
+                audio.currentTime = 0; // Reset the audio to the beginning
+                audio.play(); // Play the audio again
+            });
+        });
+    </script>
+      <script>window.setTimeout = null;</script>
+      <audio src="music1.mp3"></audio>
+</body>
+</html>

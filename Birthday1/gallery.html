@@ -42,11 +42,46 @@
             transform: scale(1.05);
             transition: transform 0.3s ease-in-out;
         }
+        #myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* Add some content at the bottom of the video/page */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+  font-size: 17px;
+  position: relative; /* Add this line to set a reference point for absolute positioning */
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  z-index: -1;
+}
+
+/* text animation */
+
+
     </style>
 </head>
 
 <body style="background-color: cadetblue;">
-    <h1 style="text-align: center; color:black; font-size: 30px;">Present Memories</h1>
+    <h1 style="text-align: center; color:red; font-size: 70px;">Never Forgettable Memories</h1>
+    <video autoplay muted loop id="myVideo">
+        <source src="love.mp4" type="video/mp4">
+      </video>
     <div class="gallery-container">
         <!-- Gallery items -->
 
@@ -123,14 +158,14 @@
         <div class="card" style="width: 18rem;">
             <img src="img11.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <p class="card-text">Yrr mai bhi tere bina imagine nhi kr skta yrr but koi na sayd god ki koi plan ho muhse better koi tera wait kr rha ho😊. Happy Birthday Yrr.</p>
+                <p class="card-text">Yrr mai bhi tere bina imagine nhi kr skta yrr but koi na sayd god ki koi or plan ho sayd muhse better koi tera wait kr rha ho😊. Happy Birthday Yrr.</p>
             </div>
         </div>
 
         <div class="card" style="width: 18rem;">
             <img src="img12.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <p class="card-text">Yrr mujhe bhi tere sath hmesha rhna h yrr or abhi bhi mai tere sath hi hu Bs hann kbhi bhi ittu sa bhi tym mile to mujhe yad kr liya kr Bhulna nhi mujhe kbhi yrr .</p>
+                <p class="card-text">Yrr mujhe bhi tere sath hmesha rhna h yrr or mai hmesha tere sath hi rhna chahta tha yrr ksam se kbhi maine nhi socha tha ki tu mujhse dur jayegi koi na abhi bhi mai tere sath hi hu jis trhse tmhri dost h hann lekin mai friend nhi hu tera or hann kbhi bhi ittu sa bhi tym mile to mujhe yad kr liya kr Bhulna nhi mujhe kbhi nhi yrr .</p>
             </div>
         </div>
 
@@ -200,6 +235,24 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
+
+        <h1 style="text-align: center; color:white;">SORRY AYUSHI</h1>
+    <div style="display: flex; align-items: center; justify-content: center; padding: 20px; background-color:yellow; color: black;">
+    <h5>Or hann bndriyaa mai tujhe force ya emotional krne ke liye aisa nhi kr rha bs tujhe jo shi lge whi krna mai aise bhi khush hu 
+        Yrr mai tujhe SORRY bolna chahta hu SORRY Ayushi Kyuki maine jo kiya oo bat kbhi mai bhul nhi pata hu Telegram pr jo maine itne bde message kiye last tym ki tereko ghamand ho gya h ye sb yrr mai 
+        ksam se maine kbhi dil se aisa nhi socha yrr ki tu tym pas kr rhi this hmesha maine jitna tujhe pyar kiya h tune usse khi jyada hi kiya h yrr
+        Tbhi aaj hm aise h yrr us din mujhe pta n kya ho gya tha mere dimag me aisa aya or maine likh diya pta h uske 
+        bad agr tu meko gali de deti yaa mujhse jhgda kr leti to itna bura nhi feel hota yrr but tune kuchh bola hi nhi
+        oo mujhe abhi bhi guilty feel hota h yrr ki maine teko itna kuchh kha uske liye REALLY SORRY YRR.
+        really really sorry.Mai teko jitna phle chhta tha utna ajj bhi like krta hu kuchh nhi bdla bs distance or bdh gya 
+        phle sochte the ki yrr kb milenge or aaj bhi whi sochte h Maybe kbhi to milenge or hann kbhii ittu bhi tym mile to mujhe thoda sa yad kr liya krna maybe kisi ko bs hichki ane se hi bhla ho jaye😊😊❤️. 
+        Mujhe kbhi bhulna nhi bndriya I love you Yrr. Ek bar phir se last time HAPPY BIRTHDAY IUC tu hmesha khush rh bndriya or utna hi hsa krna jitna tune mujhpr hsi thi  
+        😊
+        </h5>
+</div>
+<h1 style="text-align: center; color: white;">I LOVE YOU AYUSHI❤️❤️</h1>.
+
+
     <script>
         window.addEventListener("DOMContentLoaded", event => {
             const audio = document.querySelector("audio");
@@ -216,22 +269,22 @@
         });
         // Optional JavaScript functionality (e.g., lightbox or modal)
         // You can add JavaScript libraries like Lightbox to enhance the gallery's functionality.
+   
+        var video = document.getElementById("myVideo");
+var btn = document.getElementById("myBtn");
+
+function myFunction() {
+  if (video.paused) {
+    video.play();
+    btn.innerHTML = "Pause";
+  } else {
+    video.pause();
+    btn.innerHTML = "Play";
+  }
+}
+
     </script>
-    <h1 style="text-align: center;">SORRY Ayushi</h1>
-    <div style="display: flex; align-items: center; justify-content: center; padding: 20px; background-color:yellow; color: black;">
-    <h5>Or hann bndriyaa mai tujhe force ya emotional krne ke liye aisa nhi kr rha bs tujhe jo shi lge whi krna mai aise bhi khush hu 
-        Yrr mai tujhe SORRY bolna chahta hu SORRY Ayushi Kyuki maine jo kiya oo bat kbhi mai bhul nhi pata hu Telegram pr jo maine itne bde message kiye last tym ki tereko ghamand ho gya h ye sb yrr mai 
-        ksam se maine kbhi dil se aisa nhi socha yrr ki tu tym pas kr rhi this hmesha maine jitna tujhe pyar kiya h tune usse khi jyada hi kiya h yrr
-        Tbhi aaj hm aise h yrr us din mujhe pta n kya ho gya tha mere dimag me aisa aya or maine likh diya pta h uske 
-        bad agr tu meko gali de deti yaa mujhse jhgda kr leti to itna bura nhi feel hota yrr but tune kuchh bola hi nhi
-        oo mujhe abhi bhi guilty feel hota h yrr ki maine teko itna kuchh kha uske liye REALLY SORRY YRR.
-        really really sorry.Mai teko jitna phle chhta tha utna ajj bhi like krta hu kuchh nhi bdla bs distance or bdh gya 
-        phle sochte the ki yrr kb milenge or aaj bhi whi sochte h Maybe kbhi to milenge or hann kbhii ittu bhi tym mile to mujhe thoda sa yad kr liya krna maybe kisi ko bs hichki ane se hi bhla ho jaye😊😊❤️. 
-        Mujhe kbhi bhulna nhi bndriya I love you Yrr. Ek bar phir se last time HAPPY BIRTHDAY IUC tu hmesha khush rh bndriya or utna hi hsa krna jitna tune mujhpr hsi thi  
-        😊
-        </h5>
-</div>
-<h1 style="text-align: center;">I Love YOU AYUSHI❤️❤️💖</h1>.
+    
     <audio src="4.mp3"></audio>
 
 
