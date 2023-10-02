@@ -432,7 +432,7 @@ body {
     <!--option value="snowflake">Snowflakes</option-->
   </select>
 
-  <audio src="tera.mp3"></audio>
+    <audio id="audio" src="tera.mp3"></audio>
 
     <div class="container">
       <h2 style="text-align: center; color: rgb(8, 7, 7); font-weight: bold;">Happy Birthday </h2>
@@ -515,18 +515,22 @@ function onChange(e) {
 }
 
 //audio
-window.addEventListener("DOMContentLoaded", event => {
-            const audio = document.querySelector("audio");
-            audio.volume = 0.2;
+const audio = document.getElementById("audio");
+        const playAudioButton = document.getElementById("playAudioButton");
 
-            // Play the audio when the DOM is loaded
-            audio.play();
+        // Set the audio volume and loop
+        audio.volume = 0.2;
+        audio.loop = true;
 
-            // Add an "ended" event listener to loop the audio
-            audio.addEventListener("ended", () => {
-                audio.currentTime = 0; // Reset the audio to the beginning
-                audio.play(); // Play the audio again
-            });
+        // Add a click event listener to the button
+        playAudioButton.addEventListener("click", function() {
+            // Check if the audio is paused, and if so, play it
+            if (audio.paused) {
+                audio.play();
+            } else {
+                // If the audio is already playing, pause it
+                audio.pause();
+            }
         });
     </script>
 </body>
