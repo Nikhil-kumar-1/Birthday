@@ -37,7 +37,13 @@
     }
   </style>
   <script>window.setTimeout = null;
+   document.addEventListener("DOMContentLoaded", function () {
+  const birthdayButton = document.getElementById("nextPageButton");
 
+  birthdayButton.addEventListener("click", function () {
+    window.location.href = "index.html"; // Redirect to birthday.html
+  });
+});
     
   
   </script>
