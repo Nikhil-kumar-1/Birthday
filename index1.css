@@ -15,8 +15,8 @@ body {
   margin: auto;
   position: absolute;
   top: 0;
-  right: 300px;
-  bottom: 20;
+  right: 0;
+  bottom: 0;
   left: 0;
   perspective: 9999px;
   transform-style: preserve-3d;

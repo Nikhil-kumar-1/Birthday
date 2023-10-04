@@ -30,7 +30,7 @@
     <div class="layer"></div>
   </div>
   <button style="background-color: rgb(76, 76, 253); padding:10px; cursor:pointer; color: white;" id="nextPageButton"><a style="color: white; text-decoration: none;" href="birthday.html">Open Next Page</a></button>
-  
+  <audio src="music1.mp3"></audio>
   <style>
     * *, *::before, *::after { 
       animation-play-state: running !important;
@@ -45,6 +45,19 @@
   });
 });
     
+window.addEventListener("DOMContentLoaded", event => {
+  const audio = document.querySelector("audio");
+  audio.volume = 0.2;
+
+  // Play the audio when the DOM is loaded
+  audio.play();
+
+  // Add an "ended" event listener to loop the audio
+  audio.addEventListener("ended", () => {
+    audio.currentTime = 0; // Reset the audio to the beginning
+    audio.play(); // Play the audio again
+  });
+});
   
   </script>
 </body>
