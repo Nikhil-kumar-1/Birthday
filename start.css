@@ -12,14 +12,14 @@ body {
 .stage {
   height: 300px;
   width: 500px;
+  margin: auto;
   position: absolute;
   top: 0;
-  right: 0;
-  bottom: 0;
+  right: 300px;
+  bottom: 20;
   left: 0;
   perspective: 9999px;
   transform-style: preserve-3d;
-  margin-left:300px;
 }
 
 .layer {
@@ -153,60 +153,3 @@ body {
     transform: rotateY(-40deg) rotateX(-43deg);
   }
 }
-
-/* button */
-.center-one {
-    text-align: center;
-}
-
-button#nextPageButton {
-    background-color: #3498db; /* Background color for the button */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-button#nextPageButton:hover {
-    background-color: #2980b9; /* Background color when hovered */
-}
-
-
-
-
-
-/* Mobile styles */
-@media (max-width: 768px) {
-  .stage {
-      height: 200px;
-      width: 300px;
-      margin-left: 0;
-  }
-
-  .layer {
-      width: 80%;
-      height: 80%;
-  }
-
-  .layer:after {
-      font-size: 80px;
-      line-height: 0.9;
-  }
-}
-
-/* Animation */
-@keyframes ಠ_ಠ {
-  100% {
-      transform: rotateY(-40deg) rotateX(-43deg);
-  }
-}
-
-/* Button styles (unchanged) */
-
-
-
-
-
-
