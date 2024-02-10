@@ -1,345 +1,419 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form</title>
-    <style>
-     * {
-  box-sizing: border-box;
-}
-body {
-  background: #C4E4FF;
-  background: radial-gradient(circle, hsl(223, 20%,12%), hsl(223, 20%,22%));
-  background: radial-gradient(circle, hsl(223, 40%,22%), hsl(223, 40%,12%));
-  overflow: hidden;
-  height: 100vh;
-  width: 100%;
-  user-select: none;
-  padding: 0;
-  margin: 0;
-}
-h1 {
-  font-size: 48px; /* Adjust the font size to your preference */
-  font-family: 'Comic Sans MS', cursive; /* Use a fun font */
-  text-align: center;
-  color: #FF007F; /* Set a vibrant text color (in this case, pink) */
-  text-transform: uppercase; /* Convert text to uppercase */
-  letter-spacing: 3px; /* Add letter spacing for a playful look */
-  animation: rainbowText 4s infinite linear; /* Apply a rainbow color animation */
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-@keyframes rainbowText {
-  0% { color: #FF007F; } /* Pink */
-  14% { color: #FF00FF; } /* Magenta */
-  28% { color: #8000FF; } /* Purple */
-  42% { color: #0000FF; } /* Blue */
-  57% { color: #00FFFF; } /* Cyan */
-  71% { color: #00FF00; } /* Green */
-  85% { color: #FFFF00; } /* Yellow */
-  100% { color: #FF007F; } /* Pink */
-}
+    body {
+      background: #C4E4FF;
+      background: radial-gradient(circle, hsl(223, 20%, 12%), hsl(223, 20%, 22%));
+      background: radial-gradient(circle, hsl(223, 40%, 22%), hsl(223, 40%, 12%));
+      overflow: hidden;
+      height: 100vh;
+      width: 100%;
+      user-select: none;
+      padding: 0;
+      margin: 0;
+    }
 
-/* Optional: Add some text shadow for emphasis */
-h1::after {
-  content: " 🎉"; /* Add a party hat emoji for extra fun */
-  font-size: 36px; /* Adjust the font size */
-  vertical-align: middle;
-  color: #FFD700; /* Set a gold color for the emoji */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle text shadow */
-}
+    h1 {
+      font-size: 48px;
+      /* Adjust the font size to your preference */
+      font-family: 'Comic Sans MS', cursive;
+      /* Use a fun font */
+      text-align: center;
+      color: #FF007F;
+      /* Set a vibrant text color (in this case, pink) */
+      text-transform: uppercase;
+      /* Convert text to uppercase */
+      letter-spacing: 3px;
+      /* Add letter spacing for a playful look */
+      animation: rainbowText 4s infinite linear;
+      /* Apply a rainbow color animation */
+    }
 
+    @keyframes rainbowText {
+      0% {
+        color: #FF007F;
+      }
 
+      /* Pink */
+      14% {
+        color: #FF00FF;
+      }
 
-.confetti {
-  width: 1rem;
-  height: 1rem;
-  display: inline-block;
-  position: absolute;
-  top: -1rem;
-  left: 0;
-  z-index: 50;
-}
-.confetti .rotate {
-  animation: driftyRotate 1s infinite both ease-in-out;
-  perspective: 1000;
-}
-.confetti .askew {
-  background: linear-gradient(
-  var(--grad-direction, to bottom),
-  hsl(63, 100%, 50%) 25%,
-  hsl(23, 100%, 50%) 0% 66.667%,
-  hsl(43, 100%, 100%) 0% 100%);
-  transform: skewY(10deg);
-  width: 2rem;
-  height: 3.2rem;
-  animation: drifty 1s infinite alternate both ease-in-out;
-  perspective:1000;
-  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
-}
+      /* Magenta */
+      28% {
+        color: #8000FF;
+      }
 
+      /* Purple */
+      42% {
+        color: #0000FF;
+      }
 
-.confetti:nth-of-type(7n) .askew {
-  animation-delay: -.6s;
-  animation-duration: 2.25s;
-}
-.confetti:nth-of-type(7n + 1) .askew {
-  animation-delay: -.879s;
-  animation-duration: 3.5s;
-}
-.confetti:nth-of-type(7n + 2) .askew {
-  animation-delay: -.11s;
-  animation-duration: 1.95s;
-}
-.confetti:nth-of-type(7n + 3) .askew {
-  animation-delay: -.246s;
-  animation-duration: .85s;
-}
-.confetti:nth-of-type(7n + 4) .askew {
-  animation-delay: -.43s;
-  animation-duration: 2.5s;
-}
-.confetti:nth-of-type(7n + 5) .askew {
-  animation-delay: -.56s;
-  animation-duration: 1.75s;
-}
-.confetti:nth-of-type(7n + 6) .askew {
-  animation-delay: -.76s;
-  animation-duration: 1.5s;
-}
-  
-.confetti:nth-of-type(9n) .rotate {
-  animation-duration: 2s;
-}
-.confetti:nth-of-type(9n + 1) .rotate {
-  animation-duration: 2.3s;
-}
-.confetti:nth-of-type(9n + 2) .rotate {
-  animation-duration: 1.1s;
-}
-.confetti:nth-of-type(9n + 3) .rotate {
-  animation-duration: .75s;
-}
-.confetti:nth-of-type(9n + 4) .rotate {
-  animation-duration: 4.3s;
-}
-.confetti:nth-of-type(9n + 5) .rotate {
-  animation-duration: 3.05s;
-}
-.confetti:nth-of-type(9n + 6) .rotate {
-  animation-duration: 2.76s;
-}
-.confetti:nth-of-type(9n + 7) .rotate {
-  animation-duration: 7.6s;
-}
-.confetti:nth-of-type(9n + 8) .rotate {
-  animation-duration: 1.78s;
-}
+      /* Blue */
+      57% {
+        color: #00FFFF;
+      }
 
-@keyframes drifty {
-  0% {
-    transform: skewY(10deg) translate3d(-250%, 0, 0);
-  }
-  100% {
-    transform: skewY(-12deg) translate3d(250%, 0, 0);
-  }
-}
-@keyframes driftyRotate {
-  0% {
-    transform: rotateX(0);
-  }
-  100% {
-    transform: rotateX(359deg);
-  }
-}
+      /* Cyan */
+      71% {
+        color: #00FF00;
+      }
+
+      /* Green */
+      85% {
+        color: #FFFF00;
+      }
+
+      /* Yellow */
+      100% {
+        color: #FF007F;
+      }
+
+      /* Pink */
+    }
+
+    /* Optional: Add some text shadow for emphasis */
+    h1::after {
+      content: " 🎉";
+      /* Add a party hat emoji for extra fun */
+      font-size: 36px;
+      /* Adjust the font size */
+      vertical-align: middle;
+      color: #FFD700;
+      /* Set a gold color for the emoji */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      /* Add a subtle text shadow */
+    }
 
 
-select {
-  position: absolute;
-  left: 1rem;
-  top: 1rem;
-  font-size: 1rem;
-  z-index: 100;
-}
+
+    .confetti {
+      width: 1rem;
+      height: 1rem;
+      display: inline-block;
+      position: absolute;
+      top: -1rem;
+      left: 0;
+      z-index: 50;
+    }
+
+    .confetti .rotate {
+      animation: driftyRotate 1s infinite both ease-in-out;
+      perspective: 1000;
+    }
+
+    .confetti .askew {
+      background: linear-gradient(var(--grad-direction, to bottom),
+          hsl(63, 100%, 50%) 25%,
+          hsl(23, 100%, 50%) 0% 66.667%,
+          hsl(43, 100%, 100%) 0% 100%);
+      transform: skewY(10deg);
+      width: 2rem;
+      height: 3.2rem;
+      animation: drifty 1s infinite alternate both ease-in-out;
+      perspective: 1000;
+      clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+    }
 
 
-[data-type=leaves] .confetti:nth-child(4n) {
-  color: hsl(343, 80%, 30%);
-}
-[data-type=leaves] .confetti:nth-child(4n + 1) {
-  color: hsl(103, 80%, 30%);
-}
-[data-type=leaves] .confetti:nth-child(4n + 2) {
-  color: hsl(43, 80%, 40%);
-}
-[data-type=leaves] .confetti:nth-child(4n + 3) {
-  color: hsl(23, 70%, 40%);
-}
+    .confetti:nth-of-type(7n) .askew {
+      animation-delay: -.6s;
+      animation-duration: 2.25s;
+    }
 
-[data-type=bookmarks] .confetti:nth-child(4n) {
-  color: hsl(18, 100%, 50%);
-}
-[data-type=bookmarks] .confetti:nth-child(4n + 1) {
-  color: hsl(183, 100%, 50%);
-}
-[data-type=bookmarks] .confetti:nth-child(4n + 2) {
-  color: hsl(43, 100%, 50%);
-}
-[data-type=bookmarks] .confetti:nth-child(4n + 3) {
-  color: hsl(133, 100%, 90%);
-}
+    .confetti:nth-of-type(7n + 1) .askew {
+      animation-delay: -.879s;
+      animation-duration: 3.5s;
+    }
 
+    .confetti:nth-of-type(7n + 2) .askew {
+      animation-delay: -.11s;
+      animation-duration: 1.95s;
+    }
 
-[data-type=leaves] .confetti .askew {
-  background: currentColor linear-gradient(to right, rgba(0,0,0,0) 48%, rgba(0,0,0,.12) 0% 52%, rgba(0,0,0,0) 92%);
-  width: 2.5rem;
-  height: 4.2rem;
-  clip-path: polygon(50% 0%, 100% 20%, 80% 30%, 100% 45%, 74% 60%, 94% 80%, 82% 100%, 18% 100%, 6% 80%, 26% 60%, 0% 45%, 20% 30%, 0% 20%);
-  clip-path: polygon(56% 0%, 56% 16%, 60% 20%, 85% 40%, 100% 60%, 85% 75%, 70% 90%, 50% 100%, 15% 75%, 0% 60%, 15% 40%, 40% 20%, 44% 16%, 44% 0%)
-}
+    .confetti:nth-of-type(7n + 3) .askew {
+      animation-delay: -.246s;
+      animation-duration: .85s;
+    }
 
-[data-type=snowflake] .confetti .askew {
-  background: hsl(223, 40%, 96%);
-  clip-path: polygon(evenodd,
-  20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%, 22% 2%, 78% 2%, 98% 22%, 98% 78%, 78% 98%, 22% 98%, 2% 78%, 2% 22%, 30% 10%, 70% 10%, 90% 30%, 90% 70%, 70% 90%, 30% 90%, 10% 70%, 10% 30%, 32% 12%, 68% 12%, 88% 32%, 88% 68%, 68% 88%, 32% 88%, 12% 68%, 12% 32%, 40% 20%, 60% 20%, 80% 40%, 80% 60%, 60% 80%, 40% 80%, 20% 60%, 20% 40%
-  );
-}
-[data-type=bookmarks] .confetti .askew {
-  background: currentColor;
-  width: 1rem;
-  height: 2rem;
-  clip-path: polygon(evenodd,
-  0% 0%, 100% 0%, 100% 100%, 50% 90%, 0% 100%
-  );
-}
+    .confetti:nth-of-type(7n + 4) .askew {
+      animation-delay: -.43s;
+      animation-duration: 2.5s;
+    }
 
-/* video */
-.bg-video-wrap {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 100vh;
-  
-}
-video {
-  min-width: 100%;
-  min-height: 100vh;
-  z-index: 1;
-}
-.overlay {
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-image: linear-gradient(45deg, rgba(0,0,0,.3) 50%, rgba(0,0,0,.7) 50%);
-  background-size: 3px 3px;
-  z-index: 2;
-}
-h1 {
-  text-align: center;
-  color: #fff;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  z-index: 3;
-  max-width: 400px;
-  width: 100%;
-  height: 50px;
-}
+    .confetti:nth-of-type(7n + 5) .askew {
+      animation-delay: -.56s;
+      animation-duration: 1.75s;
+    }
 
-body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f2f2f2;
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
-        }
+    .confetti:nth-of-type(7n + 6) .askew {
+      animation-delay: -.76s;
+      animation-duration: 1.5s;
+    }
 
-        .container {
-            width: 500px;
-            padding: 20px;
-            background-color: rgba(240, 232, 232, 0.5);
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
+    .confetti:nth-of-type(9n) .rotate {
+      animation-duration: 2s;
+    }
 
-        @media screen and (max-width: 700px) {
-  .container{
-    width: 300px; /* The width is 100%, when the viewport is 800px or smaller */
-  }
-}
+    .confetti:nth-of-type(9n + 1) .rotate {
+      animation-duration: 2.3s;
+    }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
+    .confetti:nth-of-type(9n + 2) .rotate {
+      animation-duration: 1.1s;
+    }
 
-        label {
-            display: block;
-            font-weight: bold;
-            padding: 10px;
-        }
+    .confetti:nth-of-type(9n + 3) .rotate {
+      animation-duration: .75s;
+    }
 
-        input[type="text"], input[type="password"] {
-            width: 90%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
+    .confetti:nth-of-type(9n + 4) .rotate {
+      animation-duration: 4.3s;
+    }
 
-        .error-message {
-            color: red;
-        }
+    .confetti:nth-of-type(9n + 5) .rotate {
+      animation-duration: 3.05s;
+    }
 
-        button {
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-top: 5px;
-        }
+    .confetti:nth-of-type(9n + 6) .rotate {
+      animation-duration: 2.76s;
+    }
 
-        button:hover {
-            background-color: #0056b3;
-        }
+    .confetti:nth-of-type(9n + 7) .rotate {
+      animation-duration: 7.6s;
+    }
+
+    .confetti:nth-of-type(9n + 8) .rotate {
+      animation-duration: 1.78s;
+    }
+
+    @keyframes drifty {
+      0% {
+        transform: skewY(10deg) translate3d(-250%, 0, 0);
+      }
+
+      100% {
+        transform: skewY(-12deg) translate3d(250%, 0, 0);
+      }
+    }
+
+    @keyframes driftyRotate {
+      0% {
+        transform: rotateX(0);
+      }
+
+      100% {
+        transform: rotateX(359deg);
+      }
+    }
 
 
-        /* video */
+    select {
+      position: absolute;
+      left: 1rem;
+      top: 1rem;
+      font-size: 1rem;
+      z-index: 100;
+    }
 
-        * {
-  box-sizing: border-box;
-}
 
-body {
-  margin: 0;
-  font-family: Arial;
-  font-size: 17px;
-  position: relative; /* Add this line to set a reference point for absolute positioning */
-}
+    [data-type=leaves] .confetti:nth-child(4n) {
+      color: hsl(343, 80%, 30%);
+    }
 
-#myVideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%; 
-  min-height: 100%;
-  z-index: -1;
-}
+    [data-type=leaves] .confetti:nth-child(4n + 1) {
+      color: hsl(103, 80%, 30%);
+    }
 
-    </style>
+    [data-type=leaves] .confetti:nth-child(4n + 2) {
+      color: hsl(43, 80%, 40%);
+    }
+
+    [data-type=leaves] .confetti:nth-child(4n + 3) {
+      color: hsl(23, 70%, 40%);
+    }
+
+    [data-type=bookmarks] .confetti:nth-child(4n) {
+      color: hsl(18, 100%, 50%);
+    }
+
+    [data-type=bookmarks] .confetti:nth-child(4n + 1) {
+      color: hsl(183, 100%, 50%);
+    }
+
+    [data-type=bookmarks] .confetti:nth-child(4n + 2) {
+      color: hsl(43, 100%, 50%);
+    }
+
+    [data-type=bookmarks] .confetti:nth-child(4n + 3) {
+      color: hsl(133, 100%, 90%);
+    }
+
+
+    [data-type=leaves] .confetti .askew {
+      background: currentColor linear-gradient(to right, rgba(0, 0, 0, 0) 48%, rgba(0, 0, 0, .12) 0% 52%, rgba(0, 0, 0, 0) 92%);
+      width: 2.5rem;
+      height: 4.2rem;
+      clip-path: polygon(50% 0%, 100% 20%, 80% 30%, 100% 45%, 74% 60%, 94% 80%, 82% 100%, 18% 100%, 6% 80%, 26% 60%, 0% 45%, 20% 30%, 0% 20%);
+      clip-path: polygon(56% 0%, 56% 16%, 60% 20%, 85% 40%, 100% 60%, 85% 75%, 70% 90%, 50% 100%, 15% 75%, 0% 60%, 15% 40%, 40% 20%, 44% 16%, 44% 0%)
+    }
+
+    [data-type=snowflake] .confetti .askew {
+      background: hsl(223, 40%, 96%);
+      clip-path: polygon(evenodd,
+          20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%, 22% 2%, 78% 2%, 98% 22%, 98% 78%, 78% 98%, 22% 98%, 2% 78%, 2% 22%, 30% 10%, 70% 10%, 90% 30%, 90% 70%, 70% 90%, 30% 90%, 10% 70%, 10% 30%, 32% 12%, 68% 12%, 88% 32%, 88% 68%, 68% 88%, 32% 88%, 12% 68%, 12% 32%, 40% 20%, 60% 20%, 80% 40%, 80% 60%, 60% 80%, 40% 80%, 20% 60%, 20% 40%);
+    }
+
+    [data-type=bookmarks] .confetti .askew {
+      background: currentColor;
+      width: 1rem;
+      height: 2rem;
+      clip-path: polygon(evenodd,
+          0% 0%, 100% 0%, 100% 100%, 50% 90%, 0% 100%);
+    }
+
+    /* video */
+    .bg-video-wrap {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 100vh;
+
+    }
+
+    video {
+      min-width: 100%;
+      min-height: 100vh;
+      z-index: 1;
+    }
+
+    .overlay {
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: linear-gradient(45deg, rgba(0, 0, 0, .3) 50%, rgba(0, 0, 0, .7) 50%);
+      background-size: 3px 3px;
+      z-index: 2;
+    }
+
+    h1 {
+      text-align: center;
+      color: #fff;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      z-index: 3;
+      max-width: 400px;
+      width: 100%;
+      height: 50px;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f2f2f2;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      width: 500px;
+      padding: 20px;
+      background-color: rgba(240, 232, 232, 0.5);
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    @media screen and (max-width: 700px) {
+      .container {
+        width: 300px;
+        /* The width is 100%, when the viewport is 800px or smaller */
+      }
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      padding: 10px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 90%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .error-message {
+      color: red;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 5px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+
+    /* video */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial;
+      font-size: 17px;
+      position: relative;
+      /* Add this line to set a reference point for absolute positioning */
+    }
+
+    #myVideo {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+    }
+  </style>
 </head>
+
 <body>
-<!-- Animation -->
-<div class="confetti-land">
+  <!-- Animation -->
+  <div class="confetti-land">
     <div class="confetti"></div>
     <div class="confetti"></div>
     <div class="confetti"></div>
@@ -421,10 +495,10 @@ body {
     <div class="confetti"></div>
     <div class="confetti"></div>
   </div>
-  
-  
-  
- <!-- animation end  -->
+
+
+
+  <!-- animation end  -->
   <select style="margin-left: 20px;" id="type">
     <option value="cornfetti">Candy Corn</option>
     <option value="leaves">Fall Leaves</option>
@@ -432,111 +506,107 @@ body {
     <!--option value="snowflake">Snowflakes</option-->
   </select>
 
-    <audio id="audio" src="8.mp3"></audio>
+  <audio id="audio" src="lechla.mp3"></audio>
 
-    <div class="container">
-      <h2 style="text-align: center; color: rgb(8, 7, 7); font-weight: bold;">Happy Birthday </h2>
-        <h2>Login</h2>
-        <form id="loginForm">
-            <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required placeholder="write our unique code in small">
-            </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required placeholder="write our unique code in small">
-            </div>
-            <div class="error-message" id="errorMessage"></div>
-            <button type="button" id="loginButton">Login</button>
-        </form>
-    </div>
+  <div class="container">
+    <h2 style="text-align: center; color: rgb(8, 7, 7); font-weight: bold;">Happy Birthday </h2>
+    <h2>Login</h2>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required placeholder="write our unique code in small">
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required placeholder="write our unique code in small">
+      </div>
+      <div class="error-message" id="errorMessage"></div>
+      <button type="button" id="loginButton">Login</button>
+    </form>
+  </div>
 
-    <button style="background-color:blue;" id="playAudioButton">Play Audio</button>
+  <button style="background-color:blue;" id="playAudioButton">Play Audio</button>
 
-    <!-- Video -->
-    <video autoplay muted loop id="myVideo">
-      <source src="love.mp4" type="video/mp4">
-    </video>
-
-
+  <!-- Video -->
+  <video autoplay muted loop id="myVideo">
+    <source src="love.mp4" type="video/mp4">
+  </video>
 
 
-    <script>
-        const username = "ayunik";
-        const password = "ayunik";
 
-        document.getElementById("loginButton").addEventListener("click", function () {
-            const enteredUsername = document.getElementById("username").value;
-            const enteredPassword = document.getElementById("password").value;
 
-            if (enteredUsername === username && enteredPassword === password) {
-                window.location.href = "index1.html"; // Redirect to Birthday.html on successful login
-            } else {
-                document.getElementById("errorMessage").textContent = "Invalid username or password.";
-            }
-        });
+  <script>
+    const username = "ayunik";
+    const password = "ayunik";
 
-    
-        //animation
-        var confettiPlayers = [];
+    document.getElementById("loginButton").addEventListener("click", function () {
+      const enteredUsername = document.getElementById("username").value;
+      const enteredPassword = document.getElementById("password").value;
 
-function makeItConfetti() {
-  var confetti = document.querySelectorAll('.confetti');
-  
-  if (!confetti[0].animate) {
-    return false;
-  }
-
-  for (var i = 0, len = confetti.length; i < len; ++i) {
-    var candycorn = confetti[i];
-    candycorn.innerHTML = '<div class="rotate"><div class="askew"></div></div>';
-    var scale = Math.random() * .7 + .3;
-    var player = candycorn.animate([
-      { transform: `translate3d(${(i/len*100)}vw,-5vh,0) scale(${scale}) rotate(0turn)`, opacity: scale },
-      { transform: `translate3d(${(i/len*100 + 10)}vw,105vh,0) scale(${scale}) rotate(${ Math.random() > .5 ? '' : '-'}2turn)`, opacity: 1 }
-    ], {
-      duration: Math.random() * 3000 + 5000,
-      iterations: Infinity,
-      delay: -(Math.random() * 7000)
+      if (enteredUsername === username && enteredPassword === password) {
+        window.location.href = "index1.html"; // Redirect to Birthday.html on successful login
+      } else {
+        document.getElementById("errorMessage").textContent = "Invalid username or password.";
+      }
     });
-    
-    confettiPlayers.push(player);
-  }
-}
 
-makeItConfetti();
-onChange({currentTarget: {value: 'bookmarks'}})
 
-document.getElementById('type').addEventListener('change', onChange)
+    //animation
+    var confettiPlayers = [];
 
-function onChange(e) {
-  document.body.setAttribute('data-type', e.currentTarget.value);
-  confettiPlayers.forEach(player => player.playbackRate = e.currentTarget.value === 'bookmarks' ? 2 : 1);
-}
+    function makeItConfetti() {
+      var confetti = document.querySelectorAll('.confetti');
 
-//audio
-const audio = document.getElementById("audio");
-        const playAudioButton = document.getElementById("playAudioButton");
+      if (!confetti[0].animate) {
+        return false;
+      }
 
-        // Set the audio volume and loop
-        audio.volume = 0.2;
-        audio.loop = true;
-
-        // Add a click event listener to the button
-        playAudioButton.addEventListener("click", function() {
-            // Check if the audio is paused, and if so, play it
-            if (audio.paused) {
-                audio.play();
-            } else {
-                // If the audio is already playing, pause it
-                audio.pause();
-            }
+      for (var i = 0, len = confetti.length; i < len; ++i) {
+        var candycorn = confetti[i];
+        candycorn.innerHTML = '<div class="rotate"><div class="askew"></div></div>';
+        var scale = Math.random() * .7 + .3;
+        var player = candycorn.animate([
+          { transform: `translate3d(${(i / len * 100)}vw,-5vh,0) scale(${scale}) rotate(0turn)`, opacity: scale },
+          { transform: `translate3d(${(i / len * 100 + 10)}vw,105vh,0) scale(${scale}) rotate(${Math.random() > .5 ? '' : '-'}2turn)`, opacity: 1 }
+        ], {
+          duration: Math.random() * 3000 + 5000,
+          iterations: Infinity,
+          delay: -(Math.random() * 7000)
         });
-    </script>
+
+        confettiPlayers.push(player);
+      }
+    }
+
+    makeItConfetti();
+    onChange({ currentTarget: { value: 'bookmarks' } })
+
+    document.getElementById('type').addEventListener('change', onChange)
+
+    function onChange(e) {
+      document.body.setAttribute('data-type', e.currentTarget.value);
+      confettiPlayers.forEach(player => player.playbackRate = e.currentTarget.value === 'bookmarks' ? 2 : 1);
+    }
+
+    //audio
+    const audio = document.getElementById("audio");
+    const playAudioButton = document.getElementById("playAudioButton");
+
+    // Set the audio volume and loop
+    audio.volume = 0.2;
+    audio.loop = true;
+
+    // Add a click event listener to the button
+    playAudioButton.addEventListener("click", function () {
+      // Check if the audio is paused, and if so, play it
+      if (audio.paused) {
+        audio.play();
+      } else {
+        // If the audio is already playing, pause it
+        audio.pause();
+      }
+    });
+  </script>
 </body>
+
 </html>
-
-
-
-
-

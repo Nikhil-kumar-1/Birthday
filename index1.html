@@ -1,12 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="index1.css">
   <title>Document</title>
+  <style>
+    @import url("//fonts.googleapis.com/css?family=Pacifico|Roboto:700|Kaushan+Script");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #010101;
+      font-family: 'Roboto', sans-serif;
+      color: whitesmoke;
+    }
+
+    .birthday-message {
+      font-family: 'Pacifico', cursive;
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .stage {
+      height: 300px;
+      width: 80vw;
+      /* Adjusted for mobile */
+      max-width: 500px;
+      /* Added for mobile */
+      perspective: 9999px;
+      transform-style: preserve-3d;
+      margin-bottom: 50px;
+    }
+
+    .layer {
+      width: 80vw;
+      /* Adjusted for mobile */
+      max-width: 300px;
+      /* Added for mobile */
+      height: 100%;
+      position: absolute;
+      transform-style: preserve-3d;
+      animation: ಠ_ಠ 5s infinite alternate ease-in-out -7.5s;
+      animation-fill-mode: forwards;
+      transform: rotateY(40deg) rotateX(33deg) translateZ(0);
+    }
+
+    .layer:after {
+      font: 100px/0.65 "Pacifico", "Kaushan Script", Futura, "Roboto", "Trebuchet MS", Helvetica, sans-serif;
+      content: "Happy \a Birthday!\a ChatGpt🎂💖";
+      white-space: pre;
+      text-align: center;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 20px;
+      /* Adjusted for mobile */
+      left: 0;
+      /* Added for mobile */
+      right: 0;
+      /* Added for mobile */
+      color: whitesmoke;
+      letter-spacing: -2px;
+      text-shadow: 4px 0 10px rgba(0, 0, 0, 0.13);
+    }
+
+    .layer:nth-child(n+10):after {
+      -webkit-text-stroke: 3px rgba(0, 0, 0, 0.25);
+    }
+
+    .layer:nth-child(n+11):after {
+      -webkit-text-stroke: 15px dodgerblue;
+      text-shadow: 6px 0 6px #00366b, 5px 5px 5px #002951, 0 6px 6px #00366b;
+    }
+
+    .layer:nth-child(n+12):after {
+      -webkit-text-stroke: 15px #0077ea;
+    }
+
+    .layer:last-child:after {
+      -webkit-text-stroke: 17px rgba(0, 0, 0, 0.1);
+    }
+
+    .layer:first-child:after {
+      color: #fff;
+      text-shadow: none;
+    }
+
+    @keyframes ಠ_ಠ {
+      100% {
+        transform: rotateY(-40deg) rotateX(-43deg);
+      }
+    }
+
+    .gallery-container {
+      position: relative;
+      width: 80vw;
+      /* Adjusted for mobile */
+      max-width: 300px;
+      /* Added for mobile */
+      height: 200px;
+      /* Added for mobile */
+      transform-style: preserve-3d;
+      animation: rotate 35s linear infinite;
+    }
+
+    .gallery-container span {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform-origin: center;
+      transform-style: preserve-3d;
+      transform: rotateY(calc(var(--i) * 45deg)) translateZ(380px);
+    }
+
+    .gallery-container span img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @keyframes rotate {
+      from {
+        transform: perspective(1200px) rotateY(0deg);
+      }
+
+      to {
+        transform: perspective(1200px) rotateY(360deg);
+      }
+    }
+
+    .nextPageButton {
+      background-color: rgb(76, 76, 253);
+      padding: 10px;
+      cursor: pointer;
+      color: white;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+      margin-top: 10px;
+      text-decoration: none;
+    }
+
+    .nextPageButton a {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* animation */
+  </style>
 </head>
+
 <body>
+  <button class="nextPageButton" id="nextPageButton"><a href="birthday.html">Open Next Page</a></button>
   <div class="stage">
     <div class="layer"></div>
     <div class="layer"></div>
@@ -29,36 +186,59 @@
     <div class="layer"></div>
     <div class="layer"></div>
   </div>
-  <button style="background-color: rgb(76, 76, 253); padding:10px; cursor:pointer; color: white;" id="nextPageButton"><a style="color: white; text-decoration: none;" href="birthday.html">Open Next Page</a></button>
   <audio src="music1.mp3"></audio>
-  <style>
-    * *, *::before, *::after { 
-      animation-play-state: running !important;
-    }
-  </style>
-  <script>window.setTimeout = null;
-   document.addEventListener("DOMContentLoaded", function () {
-  const birthdayButton = document.getElementById("nextPageButton");
 
-  birthdayButton.addEventListener("click", function () {
-    window.location.href = "birthday.html"; // Redirect to birthday.html
-  });
-});
-    
-window.addEventListener("DOMContentLoaded", event => {
-  const audio = document.querySelector("audio");
-  audio.volume = 0.2;
+  <div class="gallery-container">
+    <span style="--i:1">
+      <img src="https://images4.alphacoders.com/678/thumb-1920-678317.jpg" alt="" />
+    </span>
+    <span style="--i:2">
+      <img src="https://images5.alphacoders.com/653/653698.jpg" alt="" />
+    </span>
+    <span style="--i:3">
+      <img src="https://images6.alphacoders.com/803/thumb-1920-803643.png" alt="" />
+    </span>
+    <span style="--i:4">
+      <img src="https://images.alphacoders.com/785/thumb-1920-785833.png" alt="" />
+    </span>
+    <span style="--i:5">
+      <img src="https://images6.alphacoders.com/749/thumb-1920-749966.png" alt="" />
+    </span>
+    <span style="--i:6">
+      <img src="https://images4.alphacoders.com/761/thumb-1920-761076.png" alt="" />
+    </span>
+    <span style="--i:7">
+      <img src="https://images.alphacoders.com/682/thumb-1920-682570.png" alt="" />
+    </span>
+    <span style="--i:8">
+      <img src="https://images4.alphacoders.com/866/thumb-1920-866812.png" alt="" />
+    </span>
+  </div>
 
-  // Play the audio when the DOM is loaded
-  audio.play();
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const birthdayButton = document.getElementById("nextPageButton");
 
-  // Add an "ended" event listener to loop the audio
-  audio.addEventListener("ended", () => {
-    audio.currentTime = 0; // Reset the audio to the beginning
-    audio.play(); // Play the audio again
-  });
-});
-  
+      birthdayButton.addEventListener("click", function () {
+        window.location.href = "birthday.html"; // Redirect to birthday.html
+      });
+    });
+
+    window.addEventListener("DOMContentLoaded", event => {
+      const audio = document.querySelector("audio");
+      audio.volume = 0.2;
+
+      // Play the audio when the DOM is loaded
+      audio.play();
+
+      // Add an "ended" event listener to loop the audio
+      audio.addEventListener("ended", () => {
+        audio.currentTime = 0; // Reset the audio to the beginning
+        audio.play(); // Play the audio again
+      });
+    });
+
   </script>
 </body>
+
 </html>
